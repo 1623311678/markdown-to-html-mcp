@@ -1,0 +1,10 @@
+{
+    "mcp": [
+      {
+        "name": "markdown-to-html-mcp (dev)",
+        "type": "stdio",
+        "command": "npx",
+        "args": ["ts-node", "src/cli.ts"]
+      }
+    ]
+  }
