@@ -1,4 +1,4 @@
-# markdown-to-html-mcp
+# @hun-dun/markdown-to-html-mcp
 
 ## 项目简介
 
@@ -40,14 +40,14 @@ node dist-cjs/cli.js --http
 
 ### 作为全局命令/被 Cursor 调用
 ```bash
-npx markdown-to-html-mcp
+npx @hun-dun/markdown-to-html-mcp
 # 或
 markdown-to-html-mcp
 ```
 
 ### 远程 HTTP/Streamable HTTP 调用
 ```bash
-curl -X POST http://localhost:3000/markdownToHtml -H 'Content-Type: application/json' -d '{"markdown": "# Hello"}'
+curl -X POST http://localhost:3000/mcp -H 'Content-Type: application/json' -H 'Accept: application/json, text/event-stream' -d '{"tool":"markdownToHtml","input":{"markdown":"# Hello"}}'
 ```
 
 ### ESM/CJS 产物说明
@@ -71,10 +71,10 @@ curl -X POST http://localhost:3000/markdownToHtml -H 'Content-Type: application/
 {
   "mcp": [
     {
-      "name": "markdown-to-html-mcp (本地 npx)",
+      "name": "@hun-dun/markdown-to-html-mcp (本地 npx)",
       "type": "stdio",
       "command": "npx",
-      "args": ["markdown-to-html-mcp"]
+      "args": ["@hun-dun/markdown-to-html-mcp"]
     }
   ]
 }
@@ -87,8 +87,8 @@ curl -X POST http://localhost:3000/markdownToHtml -H 'Content-Type: application/
 
 1. 启动 HTTP 服务：
    ```bash
-   npx markdown-to-html-mcp --http
-   # 或 PORT=8080 npx markdown-to-html-mcp --http
+   npx @hun-dun/markdown-to-html-mcp --http
+   # 或 PORT=8080 npx @hun-dun/markdown-to-html-mcp --http
    ```
 2. 在 `.cursor/config.json` 中添加如下配置：
 
@@ -96,14 +96,14 @@ curl -X POST http://localhost:3000/markdownToHtml -H 'Content-Type: application/
 {
   "mcp": [
     {
-      "name": "markdown-to-html-mcp (remote)",
+      "name": "@hun-dun/markdown-to-html-mcp (remote)",
       "type": "http",
-      "url": "http://localhost:3000/markdownToHtml"
+      "url": "http://localhost:3000/mcp"
     }
   ]
 }
 ```
-- 适合你用 `npx markdown-to-html-mcp --http` 启动服务后，供多台机器/团队成员/云端调用。
+- 适合你用 `npx @hun-dun/markdown-to-html-mcp --http` 启动服务后，供多台机器/团队成员/云端调用。
 - 结果会直接在 Cursor 工具面板中展示。
 
 ## 常见问题

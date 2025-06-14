@@ -1,5 +1,5 @@
 {
-  "name": "markdown-to-html-mcp",
+  "name": "@hun-dun/markdown-to-html-mcp",
   "version": "1.0.0",
   "main": "dist-cjs/index.js",
   "module": "dist/index.js",
