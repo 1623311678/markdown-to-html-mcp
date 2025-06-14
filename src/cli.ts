@@ -1,4 +1,4 @@
-/* @source cursor @line_count 50  @branch feat/xxx*/
+
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { registerMarkdownToHtmlTool } from "./index.js";
@@ -12,6 +12,7 @@ async function startStdio() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
   process.stdin.resume();
+  console.log("markdownToHtml MCP server started");
 }
 
 async function startHttp() {
